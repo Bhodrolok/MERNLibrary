@@ -6,8 +6,8 @@ const createError = require('http-errors');
 
 
 //Express Routes
-const UserRoute = require('../backend/routes/user.route');
-const BookRoute = require('../backend/routes/book.route');
+const UserRoute = require('./routes/user.route');
+const BookRoute = require('./routes/book.route');
 //Inspiration: https://www.section.io/engineering-education/nodejs-mongoosejs-mongodb/
 const LocalMongoURI = 'mongodb://127.0.0.1:27017/mydatabase';
 const AtlasURI      = 'mongodb+srv://adminAll:FyJwRDDykhRfxcse@librarycluster.vgreoc9.mongodb.net/testLibraryDBv5';
