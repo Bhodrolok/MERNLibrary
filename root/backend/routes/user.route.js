@@ -3,8 +3,7 @@ router = express.Router();
 const bcrypt = require('bcryptjs');
 
 // Student Model
-let User = require('../models/User');
-
+let User = require('./Models/User');
 
 //@route:  GET http://localhost:4000/user/allOthers
 //@desc:   Get list of all regular members with records in collection (registered)

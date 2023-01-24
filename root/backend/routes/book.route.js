@@ -3,7 +3,7 @@ let mongoose = require('mongoose'),
   router = express.Router()
 
 // Book Model
-let Book = require('../models/Book');
+let Book = require('./Models/Book');
 
 //@route:  POST http://localhost:4000/book/create-book
 //@desc:   As an admin, create a new book entry and add it to library collection

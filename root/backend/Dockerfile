@@ -1,7 +1,8 @@
 #https://docs.docker.com/build/building/packaging/
 #https://docs.docker.com/language/nodejs/build-images/
-FROM node
-ENV NODE_ENV=production
+FROM node:18-alpine
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
 WORKDIR /app
 #take advantage of cached Docker layers by only copying package.json
 COPY package.json .
