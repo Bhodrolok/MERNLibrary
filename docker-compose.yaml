@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  backend:
+    image: mernlibrary-backend
+    container_name: mernlibrary-backend
+    build: ./root/backend
+    ports:
+      #Map/Port forward from Host -> Container
+      - "4000:4000"
+    networks:
+      - mern-network
+  front:
+    image: mernlibrary-frontend
+    container_name: mernlibrary-frontend
+    build: ./root/front
+    ports:
+      - "3000:3000"
+    networks:
+      - mern-network
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+
+networks:
+  mern-network:
+    driver: bridge 
