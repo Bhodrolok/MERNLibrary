@@ -1,0 +1,39 @@
+{
+  "name": "mern-lms-all",
+  "version": "1.2.0",
+  "description": "MERN-based Library Management system, run both backend and frontend at once!",
+  "main": "",
+  "scripts": {
+    "start": "concurrently \"npm:start-front\" \"npm:start-back\"",
+    "start-front": "cd ./front && react-scripts start",
+    "start-back": "npx nodemon ./backend/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "5.1.0",
+    "bcryptjs": "2.4.3",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "4.18.2",
+    "http-errors": "^2.0.0",
+    "mongoose": "6.8.0",
+    "@testing-library/jest-dom": "^5.16.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "1.2.1",
+    "bootstrap": "5.2.3",
+    "react": "18.2.0",
+    "react-bootstrap": "2.7.0",
+    "react-bootstrap-icons": "^1.10.2",
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "6.4.5",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.2",
+    "web-vitals": "^1.1.2",
+    "nodemon": "^2.0.20",
+    "concurrently":"^7.6.0"
+  }
+}
