@@ -3,7 +3,7 @@ import { SET_ERROR, LOGIN, LOGOUT, CLEAR_ERROR, SET_OTHERS , UPDATE_USER , DELET
 
 export const signinUser = (data , navigate) => dispatch => {
     dispatch({type:CLEAR_ERROR})
-    axios.post('http://localhost:4000/user/signin' , {...data})
+    axios.post('https://mlibback2.onrender.com/user/signin' , {...data})
         .then(res => {
             console.log(res.data);
             // if (res.data.isAuthenticated){
@@ -27,7 +27,7 @@ export const signinUser = (data , navigate) => dispatch => {
 
 export const registerUser = (data , navigate) => dispatch => {
     dispatch({type:CLEAR_ERROR})
-    axios.post('http://localhost:4000/user/register' , {...data})
+    axios.post('https://mlibback2.onrender.com/user/register' , {...data})
         .then(res => {
             navigate('/signin');
         })
@@ -39,7 +39,7 @@ export const registerUser = (data , navigate) => dispatch => {
 
 export const allOthers = () => dispatch => {
     dispatch({type:CLEAR_ERROR})
-    axios.get('http://localhost:4000/user/allOthers')
+    axios.get('https://mlibback2.onrender.com/user/allOthers')
         .then(res => {
             dispatch({type: SET_OTHERS , payload: res.data.others})
         })
@@ -64,7 +64,7 @@ export const logoutUser = (navigate) => dispatch => {
 
 export const updateUser = (data , navigate) => dispatch => {
     dispatch({type:CLEAR_ERROR});
-    axios.put(`http://localhost:4000/user/update-user/${data.id}` , {...data})
+    axios.put(`https://mlibback2.onrender.com/user/update-user/${data.id}` , {...data})
         .then(res => {
             dispatch({type: UPDATE_USER , payload: res.data})
             navigate('/manage');
@@ -76,7 +76,7 @@ export const updateUser = (data , navigate) => dispatch => {
 
 export const deleteUser = (data , navigate) => dispatch => {
     dispatch({type:CLEAR_ERROR});
-    axios.delete(`http://localhost:4000/user/delete-user/${data.id}`)
+    axios.delete(`https://mlibback2.onrender.com/user/delete-user/${data.id}`)
     .then(res => {
             dispatch({type: DELETE_USER , payload: data})
             navigate.push('/manage');
@@ -88,7 +88,7 @@ export const deleteUser = (data , navigate) => dispatch => {
 
 export const addFav = (data , navigate) => dispatch => {
     dispatch({type:CLEAR_ERROR});
-    axios.post(`http://localhost:4000/user/add-fav` , {...data})
+    axios.post(`https://mlibback2.onrender.com/user/add-fav` , {...data})
     .then(res => {
             dispatch({type: ADD_FAV , payload: data})
         })
@@ -98,7 +98,7 @@ export const addFav = (data , navigate) => dispatch => {
 }
 export const delFav = (data , navigate) => dispatch => {
     dispatch({type:CLEAR_ERROR});
-    axios.post(`http://localhost:4000/user/delete-fav` , {...data})
+    axios.post(`https://mlibback2.onrender.com/user/delete-fav` , {...data})
     .then(res => {
             dispatch({type: DELETE_FAV , payload: data})
         })
