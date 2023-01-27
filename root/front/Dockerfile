@@ -1,7 +1,16 @@
 FROM node:18-alpine
-WORKDIR /app
-COPY package.json .
+
+WORKDIR /app/front
+
+COPY package*.json .
+
 RUN npm install
-COPY . .
+
+COPY . /app/front/
+
 EXPOSE 3000
-CMD ["npm","start"]
+
+# RUN npm install serve
+RUN npm run build
+
+CMD ["npx","serve", "build"]
