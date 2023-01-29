@@ -14,7 +14,7 @@ The backend is deployed at Render [here](https://mlibback.onrender.com/).
 	- In the newly created folder, pull the following container images from DockerHub by running in a terminal shell:
 		1. `docker pull bhodrolokd/mernlibrary:4.03`
 		2. `docker pull bhodrolokd/mernlibrary:mernlibfront-4.03`
-	 - This will respectively download the backend and frontend Docker container images from the repository locally.
+	 - This will respectively download the backend and frontend Docker container images from the [repository](https://hub.docker.com/r/bhodrolokd/mernlibrary/) locally.
 	 - To confirm the pull, run `docker images` and you should see something like: ![image](https://user-images.githubusercontent.com/51386657/215356560-af2eaef0-97d5-4983-ae00-2eb82444f83f.png)
 	 - To run the images in two separate containers, run the following commands one after the other:
 	 	1. `docker run -d  -p 4000:4000 --name back1 <backend_image_id>`
