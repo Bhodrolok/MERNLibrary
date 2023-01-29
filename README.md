@@ -6,6 +6,19 @@ Capstone project for SENG 513 Fall 2022.
 # Usage
 
 - <b>Docker</b>
+	- Ensure that Docker is installed locally. https://www.docker.com/
+	- Make a new folder at a path of your liking.
+	- In the newly created folder, pull the following container images from DockerHub by running in a terminal shell:
+		1. `docker pull bhodrolokd/mernlibrary:4.03`
+		2. `docker pull bhodrolokd/mernlibrary:mernlibfront-4.03`
+	 - This will respectively download the backend and frontend Docker container images from the repository locally.
+	 - To confirm the pull, run `docker images` and you should see something like: ![image](https://user-images.githubusercontent.com/51386657/215356560-af2eaef0-97d5-4983-ae00-2eb82444f83f.png)
+	 - To run the images in two separate containers, run the following commands one after the other:
+	 	1. `docker run -d  -p 4000:4000 --name back1 <backend_image_id>`
+		2. `docker run -d  -p 3000:3000 --name back1 <frontend_image_id>` 
+	 - The `-d` flag ensures that the containers run in the background without consuming your current terminal shell!
+	 - Open a web browser and go to `http://localhost:3000`.
+
 
 -  <b>Manual</b>
 	- Ensure that Node.js is installed locally. https://nodejs.org/en/download/
