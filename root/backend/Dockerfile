@@ -2,6 +2,7 @@
 #https://docs.docker.com/language/nodejs/build-images/
 FROM node:18-alpine
 ARG NODE_ENV=production
+ARG PORT=4000
 ENV NODE_ENV=${NODE_ENV}
 WORKDIR /app/backend
 #take advantage of cached Docker layers by only copying local package.json to image cwd (dependencies!) 
@@ -12,5 +13,5 @@ RUN npm install --production
 COPY . /app/backend
 #ENV PORT=4000
 #Want port to be available for traffic(outside)
-EXPOSE 4000
+EXPOSE ${PORT}
 CMD ["npm","run", "startBack"]

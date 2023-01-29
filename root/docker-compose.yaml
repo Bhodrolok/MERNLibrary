@@ -6,9 +6,9 @@ services:
     ports:
       #Map/Port forward from Host -> Container
       - "4000:4000"
-    container_name: mernlibraryback-container
+    container_name: mernlibraryback-container-prod
     #image: public.ecr.aws/y9k8p9q8/mernlibrary-backend:2.5
-    image: 548172022186.dkr.ecr.us-east-1.amazonaws.com/mernlib-back-use1:3.44
+    #image: 548172022186.dkr.ecr.us-east-1.amazonaws.com/mernlib-back-use1:3.44
 #    networks:
 #      - mern-network
   

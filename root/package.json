@@ -5,8 +5,8 @@
   "main": "",
   "scripts": {
     "start": "concurrently \"npm:start-front\" \"npm:start-back\"",
-    "start-front": "cd ./front && react-scripts start",
-    "start-back": "npx nodemon ./backend/index.js"
+    "start-front": "cd ./front && npx react-scripts start",
+    "start-back": "npx run ./backend/index.js"
   },
   "author": "",
   "license": "ISC",
