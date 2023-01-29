@@ -3,6 +3,8 @@ Simple Library Management System developed as a MERN web application.
 
 Capstone project for SENG 513 Fall 2022.
 
+View the live deployment of the app at Vercel [here](https://mern-library-nu.vercel.app/). 
+
 # Usage
 
 - <b>Docker</b>
