@@ -16,9 +16,17 @@ const HomePaginated = ({
     addFav
 }) => {
     const navigate = useNavigate();
+    const BUFFER_SIZE = 10; // Size of data to load/pre-load
 
-    const [searchStr , setSearchStr] = React.useState('');
-    const [_books , setBooks] = React.useState(book.books);
+    const [currentPage, setCurrentPage] = React.useState(1);
+    const [itemsPerPage] = React.useState(10);
+    const [searchStr, setSearchStr] = React.useState('');
+    const [_books, setBooks] = React.useState(book.books);
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = book.books.slice(indexOfFirstItem, indexOfLastItem);
+
     React.useEffect(() => {
         allBook();
     } , [])
@@ -26,6 +34,7 @@ const HomePaginated = ({
     React.useEffect(() => {
         setBooks(book.books);
     } , [book.books]);
+
     return (
         <Container style = {{marginTop: '10px'}}className = 'text-center'>
             <h1 className = 'text-centertext-secondary'>List of books available in the library!</h1>
@@ -33,13 +42,13 @@ const HomePaginated = ({
                 onChange = {e => setSearchStr(e.target.value)}
             />
             {/* Search button to filter and show only input-matching books */}
-            <Button style = {{marginTop: '20px',fontSize:'larger'}} onClick = {() =>{
-                if(searchStr !=""){
-                    setBooks(book.books.filter(item => item.title.toLowerCase().indexOf(searchStr.toLowerCase()) > -1))
+            <Button style = {{marginTop: '20px', fontSize:'larger'}} onClick = {() =>{
+                if(searchStr != ""){
+                    setBooks(book.books.filter(item => item.title.toLowerCase().indexOf(searchStr.toLowerCase()) > -1));
                 }
                 else{
                     //If user searches blank/empty, show all books
-                    setBooks(book.books)
+                    setBooks(book.books);
                 }
              }}>Search</Button>
 
@@ -56,7 +65,7 @@ const HomePaginated = ({
                     </tr>
                 </thead>
                 <tbody>
-                    {_books.map((item , index) => (
+                {currentItems.map((item , index) => (
                         <tr>
                             {/* first columns is just index so dont do anything but increment by 1 for each sequential book */}
                             <td>{index+1}</td>

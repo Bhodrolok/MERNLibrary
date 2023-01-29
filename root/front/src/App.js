@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 import  Header  from './components/NavBarAll'
 import Home from './components/Home'
+import HomeWithPaginate from './components/HomeWithPaginate'
 import Signin from './components/Signin'
 import Register from './components/Register'
 import Profile from './components/Profile'

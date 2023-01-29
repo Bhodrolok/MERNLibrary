@@ -11,6 +11,6 @@ COPY . /app/front/
 EXPOSE 3000
 
 # RUN npm install serve
-RUN npm run build
+# RUN npm run build
 
-CMD ["npx","serve", "build"]
+CMD ["npx","npm", "start"]
