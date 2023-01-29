@@ -3,12 +3,14 @@
 FROM node:18-alpine
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
-WORKDIR /app
-#take advantage of cached Docker layers by only copying package.json
-COPY package.json .
+WORKDIR /app/backend
+#take advantage of cached Docker layers by only copying local package.json to image cwd (dependencies!) 
+COPY package*.json /app/backend
+#install dependencies sans dev ones cuz not needed for end user!
 RUN npm install --production
 #add source code into container image
-COPY . .
-ENV PORT=4000
+COPY . /app/backend
+#ENV PORT=4000
+#Want port to be available for traffic(outside)
 EXPOSE 4000
-CMD ["npx","nodemon"]
+CMD ["npm","run", "startBack"]

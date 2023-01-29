@@ -5,11 +5,13 @@ let mongoose = require('mongoose'),
 // Book Model
 let Book = require('./Models/Book');
 
-//@route:  POST http://localhost:4000/book/create-book
-//@desc:   As an admin, create a new book entry and add it to library collection
-//@access: PRIVATE
-router.route('/create-book').post((req, res, next) => {
-  Book.create(req.body, (error, data) => {
+//NB: URL's scheme and host can fluctuate depending on where the backend is being deployed!
+
+//@route:  GET http://localhost:4000/books/
+//@desc:   Get list of all available books in library collection 
+//@access: PUBLIC
+router.route('/').get((req, res) => {
+  Book.find((error, data) => {
     if (error) {
       return next(error)
     } else {
@@ -18,11 +20,11 @@ router.route('/create-book').post((req, res, next) => {
   })
 })
 
-//@route:  GET http://localhost:4000/book/
-//@desc:   Get list of all available books in library collection 
-//@access: PUBLIC
-router.route('/').get((req, res) => {
-  Book.find((error, data) => {
+//@route:  POST http://localhost:4000/book/create-book
+//@desc:   As an admin, create a new book entry and add it to library collection
+//@access: PRIVATE
+router.route('/create-book').post((req, res, next) => {
+  Book.create(req.body, (error, data) => {
     if (error) {
       return next(error)
     } else {

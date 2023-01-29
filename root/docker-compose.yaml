@@ -1,27 +1,30 @@
 version: "3.9"
 services:
+  
   backend:
-    image: mernlibrary-backend
-    container_name: mernlibrary-backend
     build: ./backend
     ports:
       #Map/Port forward from Host -> Container
       - "4000:4000"
-    networks:
-      - mern-network
-  front:
-    image: mernlibrary-frontend
-    container_name: mernlibrary-frontend
-    build: ./front
-    ports:
-      - "3000:3000"
-    networks:
-      - mern-network
-    stdin_open: true
-    tty: true
-    depends_on:
-      - backend
+    container_name: mernlibraryback-container
+    #image: public.ecr.aws/y9k8p9q8/mernlibrary-backend:2.5
+    image: 548172022186.dkr.ecr.us-east-1.amazonaws.com/mernlib-back-use1:3.44
+#    networks:
+#      - mern-network
+  
+#   front:
+#     build: ./front
+#     ports:
+#       - "3000:3000"
+#     container_name: mernlibraryfront-container
+#     image: public.ecr.aws/y9k8p9q8/mernlibrary-frontend:2.0
+# #    networks:
+# #      - mern-network
+#     stdin_open: true
+#     tty: true
+#     depends_on:
+#       - backend
 
-networks:
-  mern-network:
-    driver: bridge 
+#networks:
+#  mern-network:
+#    driver: bridge 
