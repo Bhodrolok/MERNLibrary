@@ -27,9 +27,10 @@ Capstone project for SENG 513 Fall 2022.
 	- Run `npm start`.
 	- If your system already has a preferred default web browser, it should open and go to `http://localhost:3000` .
 	- If not, you can visit it from any web browser you want!
+	- Please be aware that building and running the application through this method will take additional time for the frontend to render compared to the other method.
 
 # Contributors
-- Ranadip Chatterjee (30061851)
-- Md Azharul Islam Fahim (30073245)
-- Arjun Varma Kakarlapudi (30092125)
-- Kamrul Ahsan Noor (30078754)
+- Ranadip Chatterjee (Backend)
+- Md Azharul Islam Fahim (Backend)
+- Arjun Varma Kakarlapudi (Frontend)
+- Kamrul Ahsan Noor (Frontend)
